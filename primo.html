@@ -1,13 +1,7 @@
 <!DOCTYPE html>
-<!--Nesta observação vocês devem colocar os nomes dos alunos que ajudaram na atividade.
-Um aluno por linha e coloque o nome completo, o respectiv número e a turma.
-Nome:                                       nº:         Turma:              
-Nome:                                       nº:         Turma:              
-Nome:                                       nº:         Turma:              
-Nome:                                       nº:         Turma:              
-Nome:                                       nº:         Turma:              
-Nome:                                       nº:         Turma:              
-Nome:                                       nº:         Turma:              -->
+<!-- Nome:  Guilherme Felisberto Reis                                 Turma: 3 A   -->
+
+
 <html lang="pt-BR">
   <head>
     <title>exercício sobre estrutura condicional</title>
@@ -17,9 +11,9 @@ Nome:                                       nº:         Turma:              -->
         var canvas = document.getElementById("meuCanvas");
         if (canvas.getContext) {
           var cntxt = canvas.getContext("2d");
-          var maxWidth = 770;
-          var lineHeight = 35;
-          var x = (canvas.width - maxWidth) / 2;
+          var maxWidth = 500;
+          var lineHeight = 20;
+          var x = (canvas.width - maxWidth)/ 2;
           var y = 60;
 
           var N1 = parseInt(document.getElementById("Numero1").value, 10);
@@ -31,11 +25,32 @@ Nome:                                       nº:         Turma:              -->
         }
       }
       function ContarMostrarNumeros(cntxt, N1, x, y) {
-    
-         
+        line =""
+      R= N1+ "é primo "
+      if (N1 < 2 ||(N1 % 2 ==0 && N1!=2) ){
+
+      R= N1+ " nao é primo "
+      }   
+        else {
+        var c =3
+        while (c <= N1/2 ){
+          
+          if (N1% c==0){
+      R = N1+ "nao é primo"
+          } else {
+      R = N1 + "é primo "
+     
+    }
+        }
+      }
+
+      
+
+      line= line + R 
 
 
-        
+
+
         cntxt.fillText(line, x, y);
         cntxt.strokeText(line, x, y);
         document.getElementById("Numero1").value = "";
@@ -46,13 +61,13 @@ Nome:                                       nº:         Turma:              -->
   <body>
     <div>
       <label style="font-size: 20px">Números</label>
-      <input type="text" id="Numero1" autofocus /><br />
+      <input type="text" id="Numero1" autofocus /> <br>
 
-      <button onclick="contar()">Contar</button><br /><br />
+      <button onclick="contar()">Contar</button> <br>
       <canvas
         id="meuCanvas"
-        width="800"
-        height="800"
+        width="500"
+        height="500"
         style="border: 1px solid #000000; background-color: white"
       ></canvas>
     </div>
